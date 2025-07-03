@@ -35,14 +35,25 @@ export default defineConfig({
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
         runtimeCaching: [
           {
-            urlPattern: /^https:\/\/api\./,
+            urlPattern: /\/api\//,
             handler: 'NetworkFirst',
             options: {
               cacheName: 'api-cache',
+              networkTimeoutSeconds: 10,
               expiration: {
                 maxEntries: 100,
-                maxAgeSeconds: 60 * 60 * 24 // 24 hours
+                maxAgeSeconds: 60 * 60 * 2 // 2 hours
+              },
+              cacheKeyWillBeUsed: async ({request}) => {
+                return `${request.url}?timestamp=${Math.floor(Date.now() / (1000 * 60 * 5))}`; // 5 minute cache key
               }
+            }
+          },
+          {
+            urlPattern: /\/auth\/login/,
+            handler: 'NetworkOnly',
+            options: {
+              networkTimeoutSeconds: 15
             }
           },
           {

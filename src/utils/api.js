@@ -9,18 +9,20 @@ import { getToken } from './auth';
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001/api';
 
 /**
- * Make an API request with proper authentication
+ * Make an API request with proper authentication and retry logic
  * @param {string} endpoint - API endpoint
  * @param {Object} options - Fetch options
+ * @param {number} retries - Number of retries for failed requests
  * @returns {Promise} - Fetch promise
  */
-const apiRequest = async (endpoint, options = {}) => {
+const apiRequest = async (endpoint, options = {}, retries = 2) => {
   // Get token from localStorage
   const token = getToken();
   
   // Set default headers
   const headers = {
     'Content-Type': 'application/json',
+    'X-Requested-With': 'XMLHttpRequest',
     ...options.headers,
   };
   
@@ -29,29 +31,61 @@ const apiRequest = async (endpoint, options = {}) => {
     headers['Authorization'] = `Bearer ${token}`;
   }
   
-  // Make request
-  const response = await fetch(`${API_BASE_URL}${endpoint}`, {
-    ...options,
-    headers,
-  });
+  // Create AbortController for timeout
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 second timeout
   
-  // Check if response is ok
-  if (!response.ok) {
-    // Try to parse error message
-    let errorMessage;
-    try {
-      const errorData = await response.json();
-      errorMessage = errorData.message || `Error: ${response.status}`;
-    } catch (e) {
-      errorMessage = `Error: ${response.status}`;
+  try {
+    // Make request with timeout and retry logic
+    const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+      ...options,
+      headers,
+      signal: controller.signal,
+      // Add credentials for CORS
+      credentials: 'include',
+    });
+    
+    clearTimeout(timeoutId);
+    
+    // Check if response is ok
+    if (!response.ok) {
+      // Try to parse error message
+      let errorMessage;
+      try {
+        const errorData = await response.json();
+        errorMessage = errorData.error || errorData.message || `Error: ${response.status}`;
+      } catch (e) {
+        errorMessage = `Error: ${response.status} - ${response.statusText}`;
+      }
+      
+      throw new Error(errorMessage);
     }
     
-    throw new Error(errorMessage);
+    // Parse response
+    const data = await response.json();
+    return data;
+    
+  } catch (error) {
+    clearTimeout(timeoutId);
+    
+    // Handle network errors and timeouts with retry
+    if ((error.name === 'AbortError' || error.name === 'TypeError' || error.message.includes('Failed to fetch')) && retries > 0) {
+      console.log(`Request failed, retrying... (${retries} attempts left)`);
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Wait 1 second before retry
+      return apiRequest(endpoint, options, retries - 1);
+    }
+    
+    // Provide user-friendly error messages
+    if (error.name === 'AbortError') {
+      throw new Error('Richiesta scaduta. Controlla la tua connessione internet.');
+    }
+    
+    if (error.message.includes('Failed to fetch')) {
+      throw new Error('Impossibile connettersi al server. Controlla la tua connessione internet.');
+    }
+    
+    throw error;
   }
-  
-  // Parse response
-  const data = await response.json();
-  return data;
 };
 
 /**
