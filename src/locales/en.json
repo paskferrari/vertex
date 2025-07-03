@@ -1,0 +1,109 @@
+{
+  "common": {
+    "appName": "Vertex",
+    "tagline": "Sports Betting Performance Tracker",
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "logout": "Logout",
+    "welcome": "Welcome, {{name}}",
+    "won": "Won",
+    "lost": "Lost",
+    "pending": "Pending"
+  },
+  "navigation": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "wallet": "Wallet",
+    "roi": "ROI",
+    "profile": "Profile",
+    "notifications": "Notifications",
+    "settings": "Settings"
+  },
+  "login": {
+    "title": "Welcome to Vertex",
+    "subtitle": "Sports Betting Performance Tracker",
+    "emailPlaceholder": "Enter your email",
+    "codePlaceholder": "Enter verification code",
+    "requestCode": "Request Code",
+    "verifyCode": "Verify Code",
+    "accessWithoutOTP": "Access Without OTP",
+    "goToTestPage": "Go to Test Page",
+    "goToSimplePage": "Go to Simple Page",
+    "componentRendered": "Component fully rendered"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Your betting performance at a glance",
+    "summary": "Summary",
+    "roi": "ROI",
+    "winRate": "Win Rate",
+    "totalBets": "Total Bets",
+    "pendingBets": "Pending Bets",
+    "weeklyProfit": "Weekly Profit",
+    "recentActivity": "Recent Activity",
+    "upcomingBets": "Upcoming Bets",
+    "viewAll": "View All",
+    "recentBets": "Recent Bets",
+    "viewAllBets": "View All Bets",
+    "latestTips": "Latest Tips"
+  },
+  "wallet": {
+    "title": "Wallet",
+    "balance": "Balance",
+    "pendingBets": "Pending Bets",
+    "completedBets": "Completed Bets",
+    "addBet": "Add Bet",
+    "filterBets": "Filter Bets",
+    "noBets": "No bets found"
+  },
+  "roi": {
+    "title": "ROI Tracker",
+    "totalInvested": "Total Invested",
+    "totalReturns": "Total Returns",
+    "netProfit": "Net Profit",
+    "roiPercentage": "ROI Percentage",
+    "timeFilters": {
+      "all": "All Time",
+      "month": "This Month",
+      "week": "This Week",
+      "today": "Today"
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "personalInfo": "Personal Information",
+    "name": "Name",
+    "email": "Email",
+    "joinDate": "Join Date",
+    "subscription": "Subscription",
+    "plan": "Plan",
+    "expiryDate": "Expiry Date",
+    "statistics": "Statistics",
+    "settings": "Settings",
+    "notifications": "Notifications",
+    "preferences": "Preferences",
+    "language": "Language",
+    "currency": "Currency",
+    "timezone": "Timezone",
+    "deleteAccount": "Delete Account"
+  },
+  "tipCard": {
+    "confidence": "{{level}} Confidence",
+    "odds": "Odds",
+    "potentialReturn": "Potential Return",
+    "by": "By {{author}}",
+    "saveToWallet": "Save to Wallet",
+    "addToWallet": "Add to Wallet"
+  },
+  "home": {
+    "todaysPredictions": "Today's Predictions",
+    "noPredictions": "No predictions available for today. Check back later!",
+    "viewAllPredictions": "View All Predictions"
+  }
+}

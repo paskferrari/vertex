@@ -1,0 +1,109 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "logout": "Logout",
+    "welcome": "Welcome, {{name}}",
+    "won": "Won",
+    "lost": "Lost",
+    "pending": "Pending",
+    "appName": "Vertex",
+    "tagline": "Smart Betting Analytics"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "wallet": "Wallet",
+    "roi": "ROI",
+    "profile": "Profile",
+    "notifications": "Notifications",
+    "settings": "Settings",
+    "home": "Home"
+  },
+  "login": {
+    "title": "Welcome Back",
+    "subtitle": "Sign in to continue",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "signIn": "Sign In",
+    "noAccount": "Don't have an account?",
+    "signUp": "Sign Up"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Your betting performance at a glance",
+    "summary": "Summary",
+    "roi": "ROI",
+    "winRate": "Win Rate",
+    "totalBets": "Total Bets",
+    "pendingBets": "Pending Bets",
+    "weeklyProfit": "Weekly Profit",
+    "recentActivity": "Recent Activity",
+    "upcomingBets": "Upcoming Bets",
+    "viewAll": "View All",
+    "recentBets": "Recent Bets",
+    "viewAllBets": "View All Bets",
+    "latestTips": "Latest Tips"
+  },
+  "wallet": {
+    "title": "Wallet",
+    "balance": "Balance",
+    "deposit": "Deposit",
+    "withdraw": "Withdraw",
+    "transactions": "Transactions",
+    "date": "Date",
+    "type": "Type",
+    "amount": "Amount",
+    "status": "Status"
+  },
+  "roi": {
+    "title": "ROI Tracker",
+    "overall": "Overall ROI",
+    "monthly": "Monthly ROI",
+    "weekly": "Weekly ROI",
+    "daily": "Daily ROI",
+    "performance": "Performance",
+    "history": "History",
+    "filters": "Filters",
+    "timeframe": "Timeframe",
+    "sport": "Sport",
+    "betType": "Bet Type"
+  },
+  "profile": {
+    "title": "Profile",
+    "personalInfo": "Personal Information",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "country": "Country",
+    "preferences": "Preferences",
+    "notifications": "Notifications",
+    "language": "Language",
+    "theme": "Theme",
+    "security": "Security",
+    "changePassword": "Change Password",
+    "twoFactor": "Two-Factor Authentication"
+  },
+  "tipCard": {
+    "prediction": "Prediction",
+    "odds": "Odds",
+    "confidence": "Confidence",
+    "author": "Author",
+    "saveToWallet": "Save to Wallet"
+  },
+  "home": {
+    "todaysPredictions": "Today's Predictions",
+    "viewAllPredictions": "View All Predictions",
+    "noPredictions": "No predictions available for today"
+  }
+}

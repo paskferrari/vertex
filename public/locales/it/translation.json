@@ -1,0 +1,109 @@
+{
+  "common": {
+    "loading": "Caricamento...",
+    "error": "Errore",
+    "success": "Successo",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "delete": "Elimina",
+    "edit": "Modifica",
+    "view": "Visualizza",
+    "close": "Chiudi",
+    "back": "Indietro",
+    "next": "Avanti",
+    "submit": "Invia",
+    "logout": "Esci",
+    "welcome": "Benvenuto, {{name}}",
+    "won": "Vinta",
+    "lost": "Persa",
+    "pending": "In attesa",
+    "appName": "Vertex",
+    "tagline": "Analisi Intelligente delle Scommesse"
+  },
+  "navigation": {
+    "dashboard": "Dashboard",
+    "wallet": "Portafoglio",
+    "roi": "ROI",
+    "profile": "Profilo",
+    "notifications": "Notifiche",
+    "settings": "Impostazioni",
+    "home": "Home"
+  },
+  "login": {
+    "title": "Bentornato",
+    "subtitle": "Accedi per continuare",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Password Dimenticata?",
+    "signIn": "Accedi",
+    "noAccount": "Non hai un account?",
+    "signUp": "Registrati"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Panoramica delle tue performance di scommessa",
+    "summary": "Riepilogo",
+    "roi": "ROI",
+    "winRate": "Percentuale di Vittoria",
+    "totalBets": "Scommesse Totali",
+    "pendingBets": "Scommesse in Attesa",
+    "weeklyProfit": "Profitto Settimanale",
+    "recentActivity": "Attività Recente",
+    "upcomingBets": "Prossime Scommesse",
+    "viewAll": "Vedi Tutto",
+    "recentBets": "Scommesse Recenti",
+    "viewAllBets": "Vedi Tutte le Scommesse",
+    "latestTips": "Ultimi Consigli"
+  },
+  "wallet": {
+    "title": "Portafoglio",
+    "balance": "Saldo",
+    "deposit": "Deposita",
+    "withdraw": "Preleva",
+    "transactions": "Transazioni",
+    "date": "Data",
+    "type": "Tipo",
+    "amount": "Importo",
+    "status": "Stato"
+  },
+  "roi": {
+    "title": "Tracciatore ROI",
+    "overall": "ROI Complessivo",
+    "monthly": "ROI Mensile",
+    "weekly": "ROI Settimanale",
+    "daily": "ROI Giornaliero",
+    "performance": "Performance",
+    "history": "Storico",
+    "filters": "Filtri",
+    "timeframe": "Periodo",
+    "sport": "Sport",
+    "betType": "Tipo di Scommessa"
+  },
+  "profile": {
+    "title": "Profilo",
+    "personalInfo": "Informazioni Personali",
+    "name": "Nome",
+    "email": "Email",
+    "phone": "Telefono",
+    "country": "Paese",
+    "preferences": "Preferenze",
+    "notifications": "Notifiche",
+    "language": "Lingua",
+    "theme": "Tema",
+    "security": "Sicurezza",
+    "changePassword": "Cambia Password",
+    "twoFactor": "Autenticazione a Due Fattori"
+  },
+  "tipCard": {
+    "prediction": "Previsione",
+    "odds": "Quote",
+    "confidence": "Affidabilità",
+    "author": "Autore",
+    "saveToWallet": "Salva nel Portafoglio"
+  },
+  "home": {
+    "todaysPredictions": "Previsioni di Oggi",
+    "viewAllPredictions": "Vedi Tutte le Previsioni",
+    "noPredictions": "Nessuna previsione disponibile per oggi"
+  }
+}

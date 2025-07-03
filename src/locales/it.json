@@ -1,0 +1,109 @@
+{
+  "common": {
+    "appName": "Vertex",
+    "tagline": "Tracker di Performance per Scommesse Sportive",
+    "loading": "Caricamento...",
+    "error": "Si è verificato un errore",
+    "save": "Salva",
+    "cancel": "Annulla",
+    "confirm": "Conferma",
+    "back": "Indietro",
+    "next": "Avanti",
+    "submit": "Invia",
+    "logout": "Esci",
+    "welcome": "Benvenuto, {{name}}",
+    "won": "Vinta",
+    "lost": "Persa",
+    "pending": "In attesa"
+  },
+  "navigation": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "wallet": "Portafoglio",
+    "roi": "ROI",
+    "profile": "Profilo",
+    "notifications": "Notifiche",
+    "settings": "Impostazioni"
+  },
+  "login": {
+    "title": "Benvenuto su Vertex",
+    "subtitle": "Tracker di Performance per Scommesse Sportive",
+    "emailPlaceholder": "Inserisci la tua email",
+    "codePlaceholder": "Inserisci il codice di verifica",
+    "requestCode": "Richiedi Codice",
+    "verifyCode": "Verifica Codice",
+    "accessWithoutOTP": "Accedi Senza OTP",
+    "goToTestPage": "Vai alla Pagina di Test",
+    "goToSimplePage": "Vai alla Pagina Semplice",
+    "componentRendered": "Componente completamente renderizzato"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Panoramica delle tue performance di scommessa",
+    "summary": "Riepilogo",
+    "roi": "ROI",
+    "winRate": "Percentuale di Vittoria",
+    "totalBets": "Scommesse Totali",
+    "pendingBets": "Scommesse in Attesa",
+    "weeklyProfit": "Profitto Settimanale",
+    "recentActivity": "Attività Recente",
+    "upcomingBets": "Prossime Scommesse",
+    "viewAll": "Vedi Tutto",
+    "recentBets": "Scommesse Recenti",
+    "viewAllBets": "Vedi Tutte le Scommesse",
+    "latestTips": "Ultimi Consigli"
+  },
+  "wallet": {
+    "title": "Portafoglio",
+    "balance": "Saldo",
+    "pendingBets": "Scommesse in Attesa",
+    "completedBets": "Scommesse Completate",
+    "addBet": "Aggiungi Scommessa",
+    "filterBets": "Filtra Scommesse",
+    "noBets": "Nessuna scommessa trovata"
+  },
+  "roi": {
+    "title": "Tracker ROI",
+    "totalInvested": "Totale Investito",
+    "totalReturns": "Rendimento Totale",
+    "netProfit": "Profitto Netto",
+    "roiPercentage": "Percentuale ROI",
+    "timeFilters": {
+      "all": "Tutto il Tempo",
+      "month": "Questo Mese",
+      "week": "Questa Settimana",
+      "today": "Oggi"
+    }
+  },
+  "profile": {
+    "title": "Profilo",
+    "personalInfo": "Informazioni Personali",
+    "name": "Nome",
+    "email": "Email",
+    "joinDate": "Data di Iscrizione",
+    "subscription": "Abbonamento",
+    "plan": "Piano",
+    "expiryDate": "Data di Scadenza",
+    "statistics": "Statistiche",
+    "settings": "Impostazioni",
+    "notifications": "Notifiche",
+    "preferences": "Preferenze",
+    "language": "Lingua",
+    "currency": "Valuta",
+    "timezone": "Fuso Orario",
+    "deleteAccount": "Elimina Account"
+  },
+  "tipCard": {
+    "confidence": "Confidenza {{level}}",
+    "odds": "Quote",
+    "potentialReturn": "Rendimento Potenziale",
+    "by": "Di {{author}}",
+    "saveToWallet": "Salva nel Portafoglio",
+    "addToWallet": "Aggiungi al Portafoglio"
+  },
+  "home": {
+    "todaysPredictions": "Pronostici del Giorno",
+    "noPredictions": "Nessun pronostico disponibile per oggi. Controlla più tardi!",
+    "viewAllPredictions": "Vedi Tutti i Pronostici"
+  }
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
+  <defs>
+    <linearGradient id="vertexGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="180" height="180" rx="32" fill="#0f172a"/>
+  <path d="M45 135L90 45L135 135H112.5L90 90L67.5 135H45Z" fill="url(#vertexGradient)" filter="url(#glow)"/>
+  <circle cx="90" cy="112.5" r="9" fill="#3b82f6" filter="url(#glow)"/>
+  <text x="90" y="160" text-anchor="middle" fill="#3b82f6" font-family="Arial, sans-serif" font-size="14" font-weight="bold">VERTEX</text>
+</svg>

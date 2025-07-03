@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button Test Page</title>
+  <style>
+    body {
+      background-color: #0f172a;
+      color: white;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    .container {
+      background-color: #1e293b;
+      border-radius: 10px;
+      padding: 20px;
+      width: 100%;
+      max-width: 500px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    button {
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-weight: bold;
+      display: block;
+      width: 100%;
+    }
+    
+    .secondary {
+      background-color: #8b5cf6;
+    }
+    
+    .success {
+      background-color: #10b981;
+    }
+    
+    a.button {
+      background-color: #f59e0b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-weight: bold;
+      display: block;
+      width: 100%;
+      text-align: center;
+      text-decoration: none;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Button Test Page</h1>
+    
+    <div class="button-container">
+      <button onclick="alert('Primary button clicked!')">Primary Button</button>
+      <button class="secondary" onclick="alert('Secondary button clicked!')">Secondary Button</button>
+      <button class="success" onclick="alert('Success button clicked!')">Success Button</button>
+      <a href="/" class="button">Link Button</a>
+    </div>
+  </div>
+  
+  <script>
+    console.log('Test page loaded');
+    
+    // Log all buttons to verify they exist in the DOM
+    document.addEventListener('DOMContentLoaded', () => {
+      const buttons = document.querySelectorAll('button');
+      console.log(`Found ${buttons.length} buttons:`, buttons);
+      
+      const link = document.querySelector('a.button');
+      console.log('Found link button:', link);
+    });
+  </script>
+</body>
+</html>
