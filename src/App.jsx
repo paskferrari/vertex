@@ -10,10 +10,12 @@ import { AuthProvider } from './context/AuthContext';
 
 // Components
 import Layout from './components/Layout';
+import GuestLayout from './components/GuestLayout';
 
 // Pages
 import LoginPage from './pages/LoginPage';
 import HomePage from './pages/HomePage';
+import GuestHome from './pages/GuestHome';
 import TestPage from './pages/TestPage';
 import SimplePage from './pages/SimplePage';
 import DashboardPage from './pages/DashboardPage';
@@ -44,8 +46,14 @@ function App() {
   return (
     <AuthProvider>
       <Routes>
+        {/* Guest Routes */}
+        <Route element={<GuestLayout />}>
+          <Route path="/" element={<GuestHome />} />
+          <Route path="/guest" element={<GuestHome />} />
+        </Route>
+        
         {/* Public Routes */}
-        <Route path="/" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/test" element={<TestPage />} />
         <Route path="/simple" element={<SimplePage />} />
         

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 /**
  * TipCard component for displaying betting tips
@@ -9,8 +10,9 @@ import { useTranslation } from 'react-i18next';
  * @param {Function} props.onFollow - Function to call when following the tip
  * @param {boolean} props.isFollowed - Whether the tip is already followed
  * @param {boolean} props.showFollowButton - Whether to show follow button
+ * @param {boolean} props.isGuest - Whether the user is a guest (not authenticated)
  */
-const TipCard = ({ tip, onSave, onFollow, isFollowed, showFollowButton = true }) => {
+const TipCard = ({ tip, onSave, onFollow, isFollowed, showFollowButton = true, isGuest = false }) => {
   const { t } = useTranslation();
   
   // Determine confidence status color
@@ -80,17 +82,32 @@ const TipCard = ({ tip, onSave, onFollow, isFollowed, showFollowButton = true })
 
       {/* Match and Prediction */}
       <h3 className="font-semibold text-white text-lg mb-1">{tip.match || tip.match_name}</h3>
-      <p className="text-gray-300 mb-3">{tip.prediction || tip.description || 'Pronostico disponibile'}</p>
+      <div className="relative mb-3">
+        <p className={`text-gray-300 ${isGuest ? 'filter blur-sm' : ''}`}>
+          {tip.prediction || tip.description || 'Pronostico disponibile'}
+        </p>
+        {isGuest && (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-xs bg-primary/20 text-primary px-2 py-1 rounded">
+              🔒 Accedi per vedere
+            </span>
+          </div>
+        )}
+      </div>
 
       {/* Odds and Details */}
       <div className="flex justify-between items-center mb-4">
         <div>
           <span className="text-xs text-gray-400">Quota</span>
-          <p className="text-white font-medium">{tip.odds}</p>
+          <p className={`text-white font-medium ${isGuest ? 'filter blur-sm' : ''}`}>
+            {isGuest ? '?.??' : tip.odds}
+          </p>
         </div>
         <div>
           <span className="text-xs text-gray-400">Potenziale Ritorno</span>
-          <p className="text-white font-medium">{((tip.odds - 1) * 100).toFixed(0)}%</p>
+          <p className={`text-white font-medium ${isGuest ? 'filter blur-sm' : ''}`}>
+            {isGuest ? '??%' : `${((tip.odds - 1) * 100).toFixed(0)}%`}
+          </p>
         </div>
       </div>
 
@@ -102,17 +119,26 @@ const TipCard = ({ tip, onSave, onFollow, isFollowed, showFollowButton = true })
 
       {/* Action Button */}
       {showFollowButton && (
-        <button 
-          onClick={() => onFollow ? onFollow(tip) : onSave(tip)}
-          disabled={isFollowed}
-          className={`w-full py-2 rounded-xl font-medium transition-colors ${
-            isFollowed 
-              ? 'bg-gray-500/20 text-gray-400 cursor-not-allowed'
-              : 'bg-primary/10 text-primary hover:bg-primary/20'
-          }`}
-        >
-          {isFollowed ? 'Già Seguito' : 'Segui Pronostico'}
-        </button>
+        isGuest ? (
+          <Link 
+            to="/login"
+            className="block w-full py-2 rounded-xl font-medium transition-colors bg-primary text-white hover:bg-primary/90 text-center"
+          >
+            Accedi per Seguire
+          </Link>
+        ) : (
+          <button 
+            onClick={() => onFollow ? onFollow(tip) : onSave(tip)}
+            disabled={isFollowed}
+            className={`w-full py-2 rounded-xl font-medium transition-colors ${
+              isFollowed 
+                ? 'bg-gray-500/20 text-gray-400 cursor-not-allowed'
+                : 'bg-primary/10 text-primary hover:bg-primary/20'
+            }`}
+          >
+            {isFollowed ? 'Già Seguito' : 'Segui Pronostico'}
+          </button>
+        )
       )}
     </motion.div>
   );
