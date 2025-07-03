@@ -291,6 +291,11 @@ app.patch('/api/notifications/:id/read', authMiddleware.requireAuth, (req, res) 
   );
 });
 
+// Health check endpoint for Render
+app.get('/api/health', (req, res) => {
+  res.status(200).json({ status: 'OK', message: 'Server is running' });
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
